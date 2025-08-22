@@ -3,7 +3,7 @@
 
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="agnosterzak"
+ZSH_THEME="antares"
 
 plugins=(
     git
@@ -27,6 +27,7 @@ fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
 
 # Set-up icons for files/directories in terminal using lsd
 alias ls='lsd'
+alias lsa='lsd -a'
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
@@ -39,3 +40,8 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
+
+# Load all custom functions
+for file in $ZSH/functions/*.zsh; do
+  source $file
+done
