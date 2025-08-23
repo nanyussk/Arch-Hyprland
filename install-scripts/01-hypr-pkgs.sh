@@ -8,7 +8,8 @@
 
 # add packages wanted here
 Extra=(
-
+  cmatrix
+  neovim
 )
 
 hypr_package=( 
@@ -57,7 +58,6 @@ hypr_package_2=(
   brightnessctl 
   btop
   cava
-  cmatrix
   loupe
   fastfetch
   gnome-system-monitor
