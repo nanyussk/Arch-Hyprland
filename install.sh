@@ -261,6 +261,7 @@ fi
 options_command+=(
     "gtk_themes" "Install GTK themes? (required for Dark/Light function)" "OFF"
     "bluetooth" "Do you want script to configure Bluetooth?" "OFF"
+    "power" "Install and configure power-profiles-daemon?" "OFF"
     "thunar" "Do you want Thunar file manager to be installed?" "OFF"
     "quickshell" "Install quickshell for Desktop-Like Overview?" "OFF"
     "xdph" "Install XDG-DESKTOP-PORTAL-HYPRLAND (for screen share)?" "OFF"
@@ -415,6 +416,10 @@ for option in "${options[@]}"; do
         bluetooth)
             echo "${INFO} Configuring ${SKY_BLUE}Bluetooth...${RESET}" | tee -a "$LOG"
             execute_script "bluetooth.sh"
+            ;;
+        power)
+            echo "${INFO} Installing and configuring ${SKY_BLUE}Power Profiles...${RESET}" | tee -a "$LOG"
+            execute_script "power.sh"
             ;;
         thunar)
             echo "${INFO} Installing ${SKY_BLUE}Thunar file manager...${RESET}" | tee -a "$LOG"
