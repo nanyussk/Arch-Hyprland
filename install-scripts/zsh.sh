@@ -109,4 +109,11 @@ if [ -d "$HOME/.oh-my-zsh/themes" ]; then
     cp -r assets/add_zsh_theme/* ~/.oh-my-zsh/themes >> "$LOG" 2>&1
 fi
 
+if [ -d "$HOME/.oh-my-zsh/custom/functions" ]; then
+    cp -r assets/zsh_custom_functions/* ~/.oh-my-zsh/custom/functions >> "$LOG" 2>&1
+else
+    mkdir -p "$HOME/.oh-my-zsh/custom/functions"
+    cp -r assets/zsh_custom_functions/* ~/.oh-my-zsh/custom/functions >> "$LOG" 2>&1
+fi
+
 printf "\n%.0s" {1..2}
